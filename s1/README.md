@@ -28,6 +28,8 @@
 
 - Pentru a aplica aceste concepte, git folosește o serie de comenzi, cele mai importante fiind
     - git clone - clonarea unui repository
+
+    - git config - permite configurarea preferințelor locale
     
     - git branch - listarea tuturor branch-urilor dintr-un repository
     
@@ -71,7 +73,7 @@
     - după generare, salvăm token-ul generat
         - acesta poate fi regenerat, însă nu poate fi accesat în mod direct după acest pas
 
-## 1.2. Crearea unui repository
+### 1.2. Crearea unui repository
 - Accesăm https://github.com/new pentru crearea unui nou repository
 - Completăm câmpurile:
     - Repository name
@@ -81,17 +83,17 @@
         ![GitHub New Repo](./assets/2.github_repo.png)
 - Finalizăm creare repository-ului
 
-## 1.3. Instalare Git
+### 1.3. Instalare Git
 - Accesăm https://git-scm.com/downloads și descărcăm versiunea de Git specifică sistemului de operare folosit
 
-## 1.4. Clonarea repository-ului
+### 1.4. Clonarea repository-ului
 - După instalarea Git, vom accesa terminalul și vom executa comanda de clonare a repository-ului și vom înlocui valorile aflate între parantezele unghiulare cu numele contului, respectiv cu numele repo-ului pe care vrem să îl clonăm
     ```bash
     git clone https://github.com/<<username>>/<<repo>>.git
     ```
 - Pentru username vom folosi username-ul contului, iar pentru parola token-ul generat la pasul 2
 
-## 1.5. Versionarea codului
+### 1.5. Versionarea codului
 - Accesăm fișierul "README.md" din repository-ul clonat local și adăugăm o modificare
 
 - Utilizând conceptele și comenzile prezentate la început, vom crea un commit și vom salva modificarea în repository-ul remote
