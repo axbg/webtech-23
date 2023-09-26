@@ -90,6 +90,7 @@
 - După instalarea Git, vom accesa terminalul și vom executa comanda de clonare a repository-ului și vom înlocui valorile aflate între parantezele unghiulare cu numele contului, respectiv cu numele repo-ului pe care vrem să îl clonăm
     ```bash
     git clone https://github.com/<<username>>/<<repo>>.git
+    # ex: git clone https://github.com/axbg/webtech-23.git
     ```
 - Pentru username vom folosi username-ul contului, iar pentru parola token-ul generat la pasul 2
 
