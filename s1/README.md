@@ -1,5 +1,17 @@
 # Introducere: Git & JavaScript
 
+## Conținut
+1. [GitHub](#1-github)
+    1. [Create cont GitHub](#11-creare-cont-github)
+    2. [Crearea unui repository](#12-crearea-unui-repository)
+    3. [Instalare git](#13-instalare-git)
+    4. [Clonarea repository-ului](#14-clonarea-repository-ului)
+    5. [Versionarea codului](#15-versionarea-codului)
+
+2. [JavaScript](#2-javascript)
+    1. [JavaScript pe client](#21-javascript-pe-client)
+    2. [JavaScript pe server](#22-javascript-pe-server)
+
 ## 1. GitHub
 - Git, software-ul care stă la baza GitHub și a oricărei altă platformă de acest tip, este un tool inițiat de Linus Torvalds în 2005 ce permite programatorilor să își versioneze codul și să colaboreze mai ușor
 
