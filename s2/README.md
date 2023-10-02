@@ -23,7 +23,7 @@
 - Web-ul a fost inventat de Sir Tim Berners-Lee la finalul anilor 80, la CERN, cu scopul de a permite cercetătorilor din toată lumea să partajeze mai rapid și mai eficient documentele aflate pe computerele institutelor
 
 ### 1.2 Internet vs Web
-- Pentru a discuta despre Web, trebuie ca, mai întâi să discutăm despre Internet și să înțelegem diferența dintre cele două 
+- Pentru a discuta despre Web, trebuie ca, mai întâi, să discutăm despre Internet și să înțelegem diferența dintre cele două 
 
 - Internetul este o rețea globală de computere interconectate ce permite transmiterea rapidă de date, indiferent de distanța fizică dintre acestea
 
@@ -47,7 +47,7 @@
         - HTTPS (HyperText Transfer Protocol Secure) este o extensia a protocolului HTTP ce permite transmiterea de date între un client și un host într-un mod securizat
 
 - **Domeniul** reprezintă identificatorul unic al unui host
-    - Pentru a asigura unicitatea fiecărui domeniu, există o serie de entități, condusă de ICANN (The Internet Corporation for Assigned Names and Numbers), care gestionează atribuirea acestora
+    - Pentru a asigura unicitatea fiecărui domeniu, un grup de entități, condusă de ICANN (The Internet Corporation for Assigned Names and Numbers), gestionează atribuirea acestora
     - De asemenea, pentru a permite unui host să organizeze mai bine datele care sunt expuse fără a necesita utilizarea mai multor domenii distincte, un URL poate conține și un subdomeniu, acesta fiind independent, din punct de vedere al conținutului, de către toate celelalte subdomenii definite pentru același host
         ```
         https://mail.google.com
@@ -351,7 +351,7 @@
     console.log(volkswagen.color);
     ```
 
-- Relativ recent, a fost adăugat suport pentru definirea formală a claselor, însă acestea folosesc, la bază, prototipuri (spunem că sunt syntactic sugar pentru prototipuri)
+- Relativ recent, a fost adăugat suport pentru definirea formală a claselor, însă acestea folosesc, la bază, prototipuri, fiind o formă de [*syntactic sugar*](https://en.wikipedia.org/wiki/Syntactic_sugar#:~:text=In%20computer%20science%2C%20syntactic%20sugar,style%20that%20some%20may%20prefer.)
     ```javascript
     class Person {
         constructor(name, age) {
@@ -377,8 +377,9 @@
 
     if(x < 5) {
         console.log("lower than 5");
-    // in JavaScript, comparațiile se pot face atât prin == cât ș prin ===
-    // caută pe net pentru a vedea diferența între ele :)
+    // in JavaScript, comparațiile se pot face atât prin == cât și prin ===
+    // caută pe Internet diferența dintre ele
+    // care este varianta recomandată?
     } else if(x === 5) {
         console.log("it's a 5!");
     } else {
