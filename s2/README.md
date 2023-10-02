@@ -2,10 +2,21 @@
 
 ## Conținut
 1. [Web](#1-web)
+    1. [Ce este Web-ul?](#11-ce-este-web-ul)
+    2. [Internet vs Web](#12-internet-vs-web)
+    3. [Stocarea și partajarea fișierelor pe web](#13-stocarea-și-partajarea-fișierelor-pe-web)
+    4. [HTTP](#14-http)
+    5. [HTML](#15-html)
+    6. [CSS](#16-css)
+
 2. [JavaScript](#2-javascript)
+    1. [Tipuri de date](#21-tipuri-de-date)
+    2. [Declararea variabilelor](#22-declararea-variabilelor)
+    3. [Declararea funcțiilor](#23-declararea-funcțiilor)
+    4. [Prototipuri și clase](#24-protitipuri-și-clase)
+    5. [Structuri de control](#25-structuri-de-control)
 
 ## 1. Web
-
 ### 1.1 Ce este Web-ul?
 - World Wide Web-ul (WWW) sau, pe scurt Web-ul, este o rețea de resurse interconectate prin hyperlink-uri, ce permit utilizatorilor să navigheze de la o locație la alta
 
