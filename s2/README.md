@@ -1,14 +1,15 @@
 # Web & JavaScript 101
 
+## Conținut
+1. [Web](#1-web)
+2. [JavaScript](#2-javascript)
+
 ## 1. Web
 
 ### 1.1 Ce este Web-ul?
 - World Wide Web-ul (WWW) sau, pe scurt Web-ul, este o rețea de resurse interconectate prin hyperlink-uri, ce permit utilizatorilor să navigheze de la o locație la alta
 
 - Web-ul a fost inventat de Sir Tim Berners-Lee la finalul anilor 80, la CERN, cu scopul de a permite cercetătorilor din toată lumea să partajeze mai rapid și mai eficient documentele aflate pe computerele institutelor
-
-![World Wide Web](https://images.unsplash.com/photo-1446582186851-3fe172f6acb9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80)
-<center>Fotografie realizată de <a target="_blank" href="https://unsplash.com/@jammypodger7470">Michael Podger</a></center>
 
 ### 1.2 Internet vs Web
 - Pentru a discuta despre Web, trebuie ca, mai întâi să discutăm despre Internet și să înțelegem diferența dintre cele două 
@@ -30,11 +31,11 @@
     https://wikipedia.org/wiki/World_Wide_Web
     ```
 
-- Protocolul reprezintă un set de reguli și convenții cunoscute atât de client, cât și de host, ce permite celor două părți să comunice
+- **Protocolul** reprezintă un set de reguli și convenții cunoscute atât de client, cât și de host, ce permite celor două părți să comunice
     - Cel mai important protocol atunci când discutăm de web este HTTP (HyperText Transfer Protocol) 
         - HTTPS (HyperText Transfer Protocol Secure) este o extensia a protocolului HTTP ce permite transmiterea de date între un client și un host într-un mod securizat
 
-- Domeniul reprezintă identificatorul unic al unui host
+- **Domeniul** reprezintă identificatorul unic al unui host
     - Pentru a asigura unicitatea fiecărui domeniu, există o serie de entități, condusă de ICANN (The Internet Corporation for Assigned Names and Numbers), care gestionează atribuirea acestora
     - De asemenea, pentru a permite unui host să organizeze mai bine datele care sunt expuse fără a necesita utilizarea mai multor domenii distincte, un URL poate conține și un subdomeniu, acesta fiind independent, din punct de vedere al conținutului, de către toate celelalte subdomenii definite pentru același host
         ```
@@ -42,18 +43,16 @@
         https://drive.google.com
         ``` 
 
-- Calea către resurse (path) reprezintă identificatorul unic al unei resurse în cadrul unui domeniu sau subdomeniu
+- **Calea** către resurse (path) reprezintă identificatorul unic al unei resurse în cadrul unui domeniu sau subdomeniu
 
 - Un URL poate conține și parametri, specificați în formatul cheie=valoare și separați prin simbolul &
-
-- În momentul în care un client accesează un hyperlink, ce are la bază un URL, acesta solicită host-ului resursa identificată unic de acel URL
 
 ### 1.4 HTTP
 - HTTP este un protocol de tip client-server ce funcționează printr-un schimb de mesaje inițiat de către client (**request**), la care host-ul (cunoscut și sub denumirea de **server**) răspunde (**response**)
 
 - În contextul web, clientul este, de cele mai multe ori, un **browser**
 
-- Pe lângă URL, protocolul HTTP definește o serie de metode ce descriu tipul acțiunii pe un client o face prin intermediul unui request
+- Pe lângă URL, protocolul HTTP definește o serie de metode ce descriu tipul acțiunii pe care un client o face prin intermediul unui request
 
 - Cele mai cunoscute metode HTTP sunt:
     - GET - solicită o informație din partea serverului
@@ -78,30 +77,30 @@
 
 ### 1.5 HTML
 - HTML (HyperText Markup Language) este un limbaj care permite descrierea structurii unei pagini web prin intermediul unor tag-uri specifice
-```html
-<html>
-    <head>
-        <title>Webtech 2023</title>
-    </head>
-    <body>
-        <p>Hello, Web!</p>
-    </body>
-</html>
-```
+    ```html
+    <html>
+        <head>
+            <title>Webtech 2023</title>
+        </head>
+        <body>
+            <p>Hello, Web!</p>
+        </body>
+    </html>
+    ```
 
 - Cele mai multe tag-uri pot conține tag-uri copil, ce trebuie definite între marcatorii de deschidere și de închidere 
-```html
-<div> <!-- element parinte-->
-    <p>element copil</p>
-</div>
-```
+    ```html
+    <div> <!-- element parinte-->
+        <p>element copil</p>
+    </div>
+    ```
 
-- Paginile web sunt structurate sub forma unui arbore, în care nodul părinte este întotdeauna reprezentat de tag-ul <html></html>
+- Paginile web sunt structurate sub forma unui arbore, în care nodul părinte este întotdeauna reprezentat de tag-ul **\<html>**
 
-- Deși poate descrie cu exactitate structura unei pagini web, HTML nu poate modela aspectele grafice complexe, cum ar fi colorizarea sau poziționarea exactă a elementelor, motiv care a condus la apariția **CSS** 
+- Deși poate descrie cu exactitate structura unei pagini web, HTML nu poate modela aspecte grafice complexe, cum ar fi colorizarea sau poziționarea exactă a elementelor, motiv care a condus la apariția **CSS** 
 
 ### 1.6 CSS
-- CSS (Cascade Style Sheets) este un limbaj descriptiv, utilizat împreună cu HTML, folosit pentru stilizarea paginilor web
+- CSS (Cascade Style Sheets) este un limbaj descriptiv, utilizat împreună cu HTML pentru stilizarea paginilor web
 
 - CSS poate fi utilizat pentru:
     - colorizare
@@ -173,12 +172,9 @@
         <p id="first-paragraph">Hello web</p>
         ```
 
-- Deși foarte utile, HTML și CSS nu sunt limbaje de programare complete și nu pot executa calcule dinamice sau comportamente complexe
+- Deși foarte utile, HTML și CSS nu sunt limbaje de programare propriu-zise și nu pot executa calcule dinamice sau comportamente complexe
 
 - Din acest motiv, limbajul **JavaScript**, definit inițial ca un limbaj simplu de scripting, a fost introdus împreună cu HTML și CSS, toate cele trei tehnologii fiind *necesare* în orice browser modern
-
-![JavaScript code](https://images.unsplash.com/photo-1613490900233-141c5560d75d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2874&q=80)
-<center>Fotografie realizată de <a target="_blank" href="https://unsplash.com/@shantk18">Sudharshan TK</a></center>
 
 ## 2. JavaScript
 - JavaScript, inventat în anul 1995 de către Brendan Eich, este un limbaj de nivel înalt, interpretat, dinamic, orientat-obiect, creat special pentru a defini comportamente complexe în cadrul paginilor web
@@ -213,22 +209,25 @@
     - let 
         - definește o variabilă la nivelul unui bloc de execuție
         - nu poate fi redeclarată în același bloc de execuție
+            ```javascript
+            let y = "y";
+            ```
 
     - const 
         - definește o constantă la nivelul unui bloc de execuție
         - necesită inițializare la declarare
         - nu poate fi redeclarată în același bloc de execuție
+            ```javascript
+            const x = "x";
+            ```
 
     - var 
         - definește o variabilă la nivelul unei funcții
         - poate fi redeclarată
         - nu este recomandată folosirea
-
-        ```javascript
-        const x = "x";
-        let y = "y";
-        var z = "z";
-        ```
+            ```javascript
+            var z = "z";
+            ```
 
 - JavaScript prezintă mecanismul de **hoisting**, ce face ca declararea variabilelor și a funcțiilor să fie mutată la începutul blocului/funcției din care fac parte (sau la începutul blocului global, dacă are loc în afara unei funcții)
     ```javascript
@@ -289,27 +288,29 @@
     console.log(plus(5, 6));
     ```
 
-- Funcțiile pot fi declarate inclusiv la inițializarea unui obiect
+- Funcțiile pot fi declarate inclusiv la inițializarea unui obiect, ca parte a acestuia
     ```javascript
-        const myCar = {
+    const myCar = {
         color: 'red',
         year: 2020,
         brand: 'Toyota',
-        doSomething: (a) => {console.log("do " + a)}
+        doSomething: (a) => {
+            console.log("do " + a)
+        }
     }
 
     console.log(myCar.doSomething("javascript"));
     ```
 
 ### 2.4 Protitipuri și clase
-- JavaScript este un limbaj orientat obiect ce are la bază conceptul de prototip, spre diferență de limbajele orientate obiect clasice cum ar fi Java
+- JavaScript este un limbaj orientat obiect ce are la bază conceptul de *prototip*, spre diferență de limbajele orientate obiect clasice cum ar fi Java ce utilizează conceptul de clasăs
 
-- Prototipul unui obiect reprezintă un obiect părinte folosit pentru a extinde proprietățile și metodele unui obiect
+- Prototipul unui obiect reprezintă un obiect părinte folosit pentru a extinde proprietățile și metodele
     ```javascript
-    // Funcție constructor pentru un obiect Person
+    // Funcție constructor folosită pentru crearea unui obiect de tipul Person
     function Person(name, age) {
-    this.name = name;
-    this.age = age;
+        this.name = name;
+        this.age = age;
     }
 
     // Extinderea prototipului Person prin adăugarea unei funcții
@@ -339,17 +340,17 @@
     console.log(volkswagen.color);
     ```
 
-- Recent, a fost adăugat suport pentru definirea claselor, însă acestea folosesc, de fapt, prototipuri (syntactic sugar)
+- Relativ recent, a fost adăugat suport pentru definirea formală a claselor, însă acestea folosesc, la bază, prototipuri (spunem că sunt syntactic sugar pentru prototipuri)
     ```javascript
     class Person {
-    constructor(name, age) {
-        this.name = name;
-        this.age = age;
-    }
+        constructor(name, age) {
+            this.name = name;
+            this.age = age;
+       }
 
-    greet() {
-        console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`)
-    }
+        greet() {
+            console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`)
+        }
     }
 
     const pers = new Person("John", 25);
