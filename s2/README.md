@@ -290,7 +290,7 @@
     console.log(operation(5, 6, plus));
     ```
 
-- De asemenea, o funcție poate fi declarată printr-o expresie de tipul arrow function
+- De asemenea, o funcție poate fi declarată printr-o expresie de tipul arrow function, principala diferență față de o funcție clasică fiind aceea că, dacă vom declara un arrow function într-o clasă, aceasta nu va putea accesa instanța obiectului prin keyword-ul this
     ```javascript
     const plus = (a, b) => {
         return a + b;
