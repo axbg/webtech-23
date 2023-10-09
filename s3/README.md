@@ -19,7 +19,7 @@
 
 
 ## 1. Concepte de bază
-- Suportul oferit de JavaScript pentru array-uri este foarte puternic, motiv pentru care acestea pot fi utilizate cu aceeași ușurință cu care putem utiliza tipurile de date primitive, dar, este important să reținem că, fiind un limbaj orientat obiect, **array-urile nu sunt primitive**, ci au la bază obiectul Array
+- Suportul oferit de JavaScript pentru array-uri este foarte puternic, motiv pentru care acestea pot fi utilizate cu aceeași ușurință cu care putem utiliza tipurile de date primitive, dar, este important să reținem că **array-urile nu sunt primitive**, ci au la bază obiectul Array
 
 - Pot avea o dimensiune variabilă ce nu trebuie inițializată în momentul declarării
 
@@ -167,7 +167,7 @@
 
 - Se poate observa că, spre diferență de metodele clasice de parcurgere a unui array, metoda forEach primește ca parametru o altă metodă, definită prin ca arrow function
     - Această metodă pasată ca parametru poartă numele de **callback**, fiind un concept foarte important pentru JavaScript
-    - Cu ajutorul callback-urilor, putem implementa comportamente dinamice și folosi mecanisme ce permit programarea asincronă
+    - Cu ajutorul callback-urilor, putem implementa comportamente dinamice și folosi mecanisme ce permit programarea asincronă (după cum vom vedea în seminarele viitoare)
 
 
 ### 1.6 Operatorul rest și operatorul spread
@@ -195,7 +195,7 @@
     functionWith3Params(...arr);
     ```
 
-## 1.7 Copierea unui array
+### 1.7 Copierea unui array
 - Toate mecanismele implicite de copiere a unui array creează **o copie shallow**, incluzând:
     - copierea folosind operatorul spread
     - folosirea metodei Array.from
