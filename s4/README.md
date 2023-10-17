@@ -279,7 +279,7 @@
 
 
 ## 3. Erori (excepții)
-- Erorile, similare excepțiilor din limbaje precum Java și C#, reprezint un obiect asociat unor evenimente excepționale ce pot apărea pe durata execuției unui program
+- Erorile, similare excepțiilor din limbaje precum Java și C#, reprezintă un obiect asociat unor evenimente excepționale ce pot apărea pe durata execuției unui program
 
 - O listă completă a erorilor predefinite din JavaScript poate fi regăsită [aici](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors)
 
