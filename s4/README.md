@@ -149,7 +149,7 @@
 - Constructorul este o metodă specială a unei clase ce este folosită pentru crearea și inițializarea unui obiect
 
 - Fiecare clasă poate avea un singur constructor, definit printr-o metodă cu același nume
-    - În cazul în care sunt definiți mai mulți constructori, va fi generată o excepție 
+    - În cazul în care sunt definiți mai mulți constructori, va fi aruncată o excepție 
 
 - Keyword-ul **super** permite apelarea constructorului din clasa părinte în momentul în care definim o relație de moștenire, prin termenul **extends**
     ```javascript
