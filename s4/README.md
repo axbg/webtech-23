@@ -154,36 +154,18 @@
 - Keyword-ul **super** permite apelarea constructorului din clasa părinte în momentul în care definim o relație de moștenire, prin termenul **extends**
     ```javascript
     class Person {
-        constructor(name, age) {
-            this.name = name;
-            this.age = age;
-        }
-    }
-
-    class Student extends Person {
-        constructor(name, age, major) {
-            super(name, age);
-            this.major = major;
-        }
-    }
-    ```
-
-### 2.3 Metode
-- Metodele definesc comportamente și acțiuni specifice unei clase
-    ```javascript
-    class Person {
         constructor(name) {
-            this.name = name;
+            this._name = name;
         }
 
         // getter
         get name() {
-            return this.name;
+            return this._name;
         }
 
         // setter
         set name(newName) {
-            this.name = newName;
+            this._name = newName;
         }
 
         greet() {
@@ -196,7 +178,7 @@
     // utilizare setter
     firstPerson.name = "John";
     // utilizare getter
-    firstPerson.log(firstPerson.name);
+    console.log(firstPerson.name);
     ```
 
 - În JavaScript, o metodă definită într-o clasă va fi implementată printr-o funcție atașată prototipului părinte
