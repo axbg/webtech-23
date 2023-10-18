@@ -4,7 +4,7 @@
 - alexandru.bisag@csie.ase.ro
 
 ## Ultimul seminar
-- [Seminar 4 - Closures, clase și excepții](./s4/README.md)
+- [Seminar 4 - Closures, clase și erori](./s4/README.md)
 
 ## Tema curentă
 - [Tema 1 - JavaScript](./t1/README.md)
@@ -13,7 +13,7 @@
 - [Seminar 1 - Introducere: Git & JavaScript](./s1/README.md)
 - [Seminar 2 - Web & JavaScript 101](./s2/README.md)
 - [Seminar 3 - Array-uri ](./s3/README.md)
-- [Seminar 4 - Closures, clase și excepții](./s4/README.md)
+- [Seminar 4 - Closures, clase și erori](./s4/README.md)
 
 ## Toate temele
 - [Tema 1 - JavaScript](./t1/README.md)

@@ -1,4 +1,4 @@
-# Closures, clase și excepții
+# Closures, clase și erori
 
 ## Conținut
 1. [Closures](#1-closures)
@@ -149,7 +149,7 @@
 - Constructorul este o metodă specială a unei clase ce este folosită pentru crearea și inițializarea unui obiect
 
 - Fiecare clasă poate avea un singur constructor, definit printr-o metodă cu același nume
-    - În cazul în care sunt definiți mai mulți constructori, va fi aruncată o excepție 
+    - În cazul în care sunt definiți mai mulți constructori, va fi aruncată o eroare 
 
 - Keyword-ul **super** permite apelarea constructorului din clasa părinte în momentul în care definim o relație de moștenire, prin termenul **extends**
     ```javascript
@@ -311,7 +311,7 @@
     }
     ```
 
-- Un mecanism la fel de important este mecanismul de gestionare a excepțiilor, cunoscut sub numele de mecanismul *try/catch/finally*
+- Un mecanism la fel de important este mecanismul de gestionare a erorilor, cunoscut sub numele de mecanismul *try/catch/finally*
     ```javascript
         const greet = (name) => {
             if (typeof name === "string") {
