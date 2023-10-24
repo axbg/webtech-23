@@ -1,0 +1,1 @@
+// Rescrieți exercițiul din capitolul de callbacks folosind promise-uri
