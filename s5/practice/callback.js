@@ -1,8 +1,8 @@
 // În fiecare lună în București se deschid restaurante și cafenele noi
-// Scrie un program care folosește callbacks si simulează un comportament asincron
+// Plecând de la exemplele discutate în timpul seminarului, scrie un program care folosește callbacks si simulează un comportament asincron
 // pentru a prelua informații despre acestea
 
-// funcția getPlacesNames va returna array-ul places cu numele acestea
+// funcția getPlacesNames va returna într-un mod asincron array-ul places
 
 // vom considera ulterior, că în cadrul funcției getPlacesTypes se determină
 // dacă locul este o cafenea ori un restaurant

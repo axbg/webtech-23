@@ -106,7 +106,7 @@
     - Observăm că fluxul programului nu este linear, fapt ce, într-un context cu multe instrucțiuni și structuri de date, crește considerabil complexitatea codului
 
 - Pentru a gestiona asincron toate evenimentele generate pe parcursul execuției unui program, JavaScript folosește un [event loop] ce stă la baza întregului runtime
-    - [Recomandare pentru a înțelege la un nivel aprofundat modul în care JavaScript execută instrucțiunile asincrone](https://www.youtube.com/watch?v=8aGhZQkoFbQ) 
+    - [recomandare pentru a înțelege la un nivel aprofundat modul în care JavaScript execută instrucțiunile asincrone](https://www.youtube.com/watch?v=8aGhZQkoFbQ) 
 
 - În termeni simpli, putem spune că, în momentul în care interacționează cu un agent extern, JavaScript va pune la dispoziția acestuia o metodă de a notifica finalizarea operațiunii executate, evitând astfel monitorizarea activă a progresului (fără să aștepte), fapt ce permite thread-ului principal să execute alte instrucțiuni
     ![Evenimentele în programarea asincronă](https://miro.medium.com/v2/resize:fit:587/1*Y41dOkntUbR3I4UCJBx9Xg.png)
@@ -138,7 +138,8 @@
     ```javascript
     function fetchData(callback) {
         setTimeout(() => {
-            const data = {name: "John", age: 18};            callback(data);
+            const data = {name: "John", age: 18};
+            callback(data);
         }, 2000);
     }
 
@@ -187,9 +188,9 @@
 - În exemplul anterior, în ciuda faptului că am folosit doar 3 callback-uri, codul devine greu de citit, fiind dificil de determinat modul în care metodele se apelează progresiv 
 
 - Această situație poartă denumirea de *callback hell* și poate conduce la introducerea de bug-uri foarte greu de depistat, motiv pentru care utilizarea excesivă a callback-urilor nu este recomandată 
-    - [Exemplu extrem de callback hell](./examples/callback-hell.js)
+    - [exemplu extrem de callback hell](./examples/callback-hell.js)
 
-- Pentru a rezolva această problemă, în 2015, a fost introdus un model nou, fundamental de gestionare a operațiunilor asincrone: **Promise-ul**
+- Pentru a rezolva această problemă, în 2015, a fost introdus un model nou, fundamental pentru gestionarea a operațiunilor asincrone în aplicațiile moderne: **Promise-ul**
 
 
 # 3. Promises
@@ -400,16 +401,15 @@
         Promise.allSettled(promises).then((results) => results.forEach((result) => console.log(result.status)));
         ``` 
 
-- Clasa Promise include două metode suplimentare mai puțin utilizate: *race* și *any*
-    - poți citi mai multe despre acestea [aici](https://javascript.plainenglish.io/promise-in-javascript-with-all-the-methods-b7357196a57e)
+- Clasa Promise include două metode suplimentare mai puțin utilizate: *race* și *any*, despre care poți citi mai multe [aici](https://javascript.plainenglish.io/promise-in-javascript-with-all-the-methods-b7357196a57e)
 
-- Deși reprezintă o îmbunătățire considerabilă față de utilizarea callback-urilor, promise-urile continuă să adauge un nivel de complexitate codului, fiecare operațiune asincronă necesitând mult cod suplimentar pentru a fi gestionată
+- Deși reprezintă o îmbunătățire considerabilă față de utilizarea callback-urilor, promise-urile continuă să adauge un nivel suplimentar de complexitate codului, fiecare operațiune asincronă având nevoie de instrucțiuni suplimentare specifice pentru a fi gestionată
 
-- Din acest motiv, în anul 2017, sunt introduse keyword-urile *async* și *await*
+- Din acest motiv, în anul 2017, în JavaScript sunt introduși termenii *async* și *await*
 
 
 ## 4. async/await
-- Perechea de keyword-uri async/await oferă programatorilor un mod de a scrie cod asincron într-un format care să nu se îndepărteze foarte mult de codul sincron
+- Perechea de keyword-uri async/await oferă programatorilor un mod de a scrie cod asincron într-un format care să nu se îndepărteze foarte mult de modul de scriere a codului sincron
 
 - La fel cum promise-urile sunt construite pe bazele oferite de către callback-uri, async/await are la promise-uri și sunt utilizate împreună cu acestea
     - Pe lângă Promise-uri, async/await utilizează și conceptul de functii *generator*, despre care poți citi mai multe [aici](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator)
@@ -418,21 +418,21 @@
     ```javascript
     // operațiune asincronă de lungă durată
     function delay(ms) {
-    return new Promise((resolve) => {
-        setTimeout(resolve, ms);
-    });
+        return new Promise((resolve) => {
+            setTimeout(resolve, ms);
+        });
     }
 
     // metodă asincronă, remarcăm keyword-ul async
     async function exampleAsyncFunction() {
-    console.log("Start");
+        console.log("Start");
 
-    // folosind keyword-ul await, se va aștepta finalizarea 
-    //  executării metodei asincrone înainte de a trece mai departe
-    await delay(2000);
+        // folosind keyword-ul await, se va aștepta finalizarea 
+        //  executării metodei asincrone înainte de a trece mai departe
+        await delay(2000);
 
-    // linie de cod ce va fi executată similar cu modelul sincron
-    console.log("After 2 seconds");
+        // linie de cod ce va fi executată similar cu modelul sincron
+        console.log("After 2 seconds");
     }
 
     exampleAsyncFunction();
