@@ -109,9 +109,10 @@
     - [recomandare pentru a înțelege la un nivel aprofundat modul în care JavaScript execută instrucțiunile asincrone](https://www.youtube.com/watch?v=8aGhZQkoFbQ) 
 
 - În termeni simpli, putem spune că, în momentul în care interacționează cu un agent extern, JavaScript va pune la dispoziția acestuia o metodă de a notifica finalizarea operațiunii executate, evitând astfel monitorizarea activă a progresului (fără să aștepte), fapt ce permite thread-ului principal să execute alte instrucțiuni
+
     ![Evenimentele în programarea asincronă](https://miro.medium.com/v2/resize:fit:587/1*Y41dOkntUbR3I4UCJBx9Xg.png)
 
-- Folosind acest mecanism, JavaScript, și, prin extensie, sistemelor ce folosesc tehnici de programare asincronă, pot ajunge să depașească performanța sistemelor tradiționale, în special în contexte intensive I/O
+- Folosind acest mecanism, JavaScript, și, prin extensie, sistemele ce folosesc tehnici de programare asincronă, pot ajunge să depașească performanța sistemelor tradiționale, în special în contexte intensive I/O
     ![Performanța sistemelor asincrone](https://miro.medium.com/v2/format:webp/1*1fld2hKmtya0d3h1vr0D0A.png)
 
 - Acest mecanism de executare a unei grupări de instrucțiuni într-un moment viitor nedefinit, la finalizarea unei operațiuni de durată, a fost implementat inițial în JavaScript cu ajutorul **callback-urilor** 
