@@ -1,4 +1,4 @@
-# Serverul HTTP: Node.js și Express.js
+# Serverul HTTP: Node.js și Express
 
 ## Conținut
 1. [HTTP (recapitulare)](#1-http-recapitulare)
@@ -12,7 +12,7 @@
     2. [Comenzi uzuale](#42-comenzi-uzuale)
     3. [Utilizarea pachetelor externe](#43-utilizarea-pachetelor-externe)
     
-5. [Express](#5-expressjs)
+5. [Express](#5-express)
 
 6. [Structura proiectelor](#6-structura-proiectelor)
     1. [Organizarea după tip](#61-organizarea-după-tip)
@@ -116,7 +116,7 @@
             myFunction();
         ```
 
-- În cazul nostru, vom defini un nou fișier, denumit *movies.js* în care vom defini și exporta variabila *movies*, urmând să o importăm în fișierul principal
+- În cazul nostru, vom defini un nou fișier, denumit *movie.js* în care vom defini și exporta variabila *movies*, urmând să o importăm în fișierul principal
     - Pentru început vom folosi module CommonJS în partea de back-end, urmând să actualizăm ulterior implementarea pentru a utiliza ESModules
 
 - Aceste tipuri de module poartă denumirea de *module locale*, deoarece ne permit să exportăm și importăm cod definit în fișiere diferite într-un mod direct și rapid
@@ -171,7 +171,7 @@
                 "nodemon": "1.0.0"
             }
         }
-    ```
+        ```
 
 - Acest fișier este foarte important, în absența lui neputând fi gestionate importurile de pachete externe
     - Conținutul fișierul package.json este relativ dinamic, în special în zona de declarare a dependențelor, și trebuie inclus în repository-ul unui proiect, fiind parte din acesta, nu doar un fișier de configurare
@@ -186,7 +186,7 @@
     ```
     - poate primi opțiunea "-g" pentru a face instalarea global la nivelul sistemului
     - poate primi opțiunea "-D" pentru a instala un pachet ce va fi folosit doar în dezvoltare
-    - poate primi opțiunea "--save" pentru a salva o dependință în fișierul package.json_ al proiectului
+    - poate primi opțiunea "--save" pentru a salva o dependință în fișierul package.json al proiectului
         - analog, există opțiunea "--save-dev" pentru a salva o dependință de dezvoltator
 - **npm uninstall**
     - folosită pentru a dezinstala un pachet
@@ -195,7 +195,7 @@
         npm uninstall lodash
     ```
 - **npm init**
-    - inițializează un proiect și creează un fișier _package.json_ cu configurările care au fost selectate după execuția comenzii
+    - inițializează un proiect și creează un fișier package.json cu configurările care au fost selectate după execuția comenzii
 - **npm update**
     - actualizează un pachet și preia din registrul npm ultima versiune disponibilă
 - **npm start**
@@ -212,7 +212,7 @@
     npm install --save random
     ```
 
-- În cadrul fișierului main.js vom adăuga gestionare suplimentar pentru rezolvarea unei noi rute ce va genera un număr aleatoriu și, în funcție de restul obținut în urma împărțirii acestuia la numărul total de filme existent în aplicație, va returna informațiile despre filmul aflat pe acea poziție în memorie (în cazul nostru în cadrul array-ului definit)
+- În cadrul fișierului main.js vom implementa o nouă rută care va genera un număr aleatoriu și, în funcție de restul obținut în urma împărțirii acestuia la numărul total de filme existent în aplicație, va returna informațiile despre filmul aflat pe acea poziție în memorie (în cazul nostru în cadrul array-ului definit)
     ```javascript
     const http = require("http");
     const random = require("random");
@@ -244,7 +244,7 @@
         import http from "http";
         import random from "random";
 
-        import { movies } from "./movies.js";
+        import { movies } from "./movie.js";
 
         http
             .createServer((req, res) => {
@@ -259,7 +259,7 @@
             }).listen(8080);
         ```
         ```javascript
-        //movies.js
+        //movie.js
         export const movies = ["Synechdoche, New York", "i'm thinking of ending things", "mother!", "Aloners", "Blue Valentine"];
         ```
 
@@ -280,7 +280,7 @@
     ```javascript
     import express from 'express';
     import random from "random";
-    import { movies } from "./movies.js";
+    import { movies } from "./movie.js";
 
     const PORT = 8080;
 
@@ -315,7 +315,7 @@
     - Parametrii de tip query sunt definiți la finalul URL-ului, prin marcajul specific *?numeParametru=valoare*
     - Parametrii de tip path sunt parte a URL-ului și identifică unic resursa cerută *movie/1*
 
-- Parametrii query atunci când informăm serverul cu privire la niște variabile de care trebuie să țină cont atunci când realizează operațiunea
+- Parametrii query sunt utilizați atunci când informăm serverul cu privire la niște variabile de care trebuie să țină cont pentru realizarea acțiunii invocate
     ```javascript
     // va răspunde unui request de tipul http://localhost:8080/search?title=moth
     app.get("/search", (req, res) => {
@@ -394,7 +394,7 @@
     - **director pentru modele (models)**
         - descrierea entităților utilizate în aplicație
     - **director pentru controllere (controllers)**
-        - logica de gestionare a cererilor HTTP și manipularea datelor din modele
+        - logica de gestionare a cererilor HTTP, de manipulare a datelor din request și de construire a unui response
     - **director pentru rute (routes)**
         - legătura dintre cererile HTTP și controllere
         - rutele stabilesc cum sunt gestionate diferitele cereri la nivel de URL și direcționează către controllerul potrivit
@@ -403,11 +403,13 @@
         ```
             app/
             ├── controllers/
-            │   └── movies.js
+            │   └── movie.js
             ├── models/
-            │   └── movies.js
+            │   └── movie.js
             ├── routes/
-            │   └── movies.js
+            │   └── movie.js
+            ├── services/
+            │   └── movie.js
             ├── main.js
             └── package.json
         ```
@@ -419,7 +421,8 @@
         ├── auth/
         │   ├── controller.js
         │   ├── model.js
-        │   └── routes.js
+        │   └── route.js
+        │   └── service.js
         ├── main.js
         └── package.json
     ```
@@ -431,33 +434,51 @@
     ```
         app/
         ├── controllers/
-        │   └── movies.js
+        │   └── movie.js
         ├── models/
-        │   └── movies.js
+        │   └── movie.js
         ├── routes/
-        │   └── movies.js
+        │   └── movie.js
+        ├── services/
+        │   └── movie.js
         ├── main.js
         └── package.json
     ```
 
 - Pentru a putea separa rutele de controllere și a le importa, ulterior, în fișierul principal, vom folosi *Express Router*, cu ajutorul căruia vom putea împărți fișierul main.js în 3 fișiere distincte:
-    - routes/movies.js
+    - routes/movie.js
         ```javascript
         import express from 'express';
-        import * as movieController from "../controllers/movies.js";
+        import * as movieController from "../controllers/movie.js";
 
         export const router = express.Router();
 
-        router.get("/", (req, res) => {
-            res.send({ records: movieController.getMovies() });
-        });
+        // rute get
+        router.get("/", movieController.getMovies);
+        router.get("/random", movieController.getRandomMovie);
+        router.get("/search", movieController.search);
+        router.get("/:id", movieController.getById);
 
-        router.get("/random", (req, res) => {
-            res.send({ movie: movieController.getRandomMovie() });
-        });
+        // rute post
+        router.post("/", movieController.create);
 
-        router.get("/search", (req, res) => {
-            const identifiedMovie = movieController.search(req.query.title);
+        // alte rute
+        ```
+
+    - controllers/movie.js
+        ```javascript
+        import * as movieService from "../services/movie.js";
+
+        const getMovies = (req, res) => {
+            res.send({ records: movieService.getMovies() });
+        };
+
+        const getRandomMovie = (req, res) => {
+            res.send({ movie: movieService.getRandomMovie() });
+        };
+
+        const search = (req, res) => {
+            const identifiedMovie = movieService.search(req.query.title);
 
             if (!!identifiedMovie) {
                 res.send({ movie: identifiedMovie });
@@ -466,30 +487,38 @@
                 //  tipul răspunsului
                 res.status(404).send({ message: "Movie not found" });
             }
-        });
+        };
 
-        router.get("/:id", (req, res) => {
-            const identifiedMovie = movieController.getById(req.params.id);
+        const getById = (req, res) => {
+            const identifiedMovie = movieService.getById(req.params.id);
 
             if (!!identifiedMovie) {
                 res.send({ movie: identifiedMovie });
             } else {
                 res.status(404).send({ message: "Movie not found" });
             }
-        });
+        };
 
-        router.post("/", (req, res) => {
-            movieController.create(req.body.title);
+        const create = (req, res) => {
+            movieService.create(req.body.title);
             res.status(201).send({ result: "Movie was created" });
-        });
+        };
 
-        // other routes
+        // alte metode
+
+        export {
+            getMovies,
+            getRandomMovie,
+            search,
+            getById,
+            create
+        }
         ```
 
-    - controllers/movies.js
+    - services/movie.js
         ```javascript
         import random from "random";
-        import { movies } from "../models/movies.js";
+        import { movies } from "../models/movie.js";
 
         const getMovies = () => {
             return movies;
@@ -514,7 +543,7 @@
             }
         };
 
-        // other methods
+        // alte metode
 
         export {
             getMovies,
@@ -528,7 +557,7 @@
     - main.js
         ```javascript
         import express from 'express';
-        import {router as moviesRouter} from './routes/movies.js';
+        import {router as movieRouter} from './routes/movie.js';
 
         const PORT = 8080;
 
@@ -536,14 +565,14 @@
         app.use(express.json());
 
         // atașarea rutelor specifice unui film
-        app.use("/movie", moviesRouter);
+        app.use("/movie", movieRouter);
 
         app.listen(PORT, () => console.log(`Server started on http://localhost:${PORT}`));
         ```
 
 - Obținem, astfel, un proiect mai bine organizat care, pe măsură ce vor fi adăugate funcționalități și entități noi se va extinde *pe orizontală* (mai multe fișiere), contrar exemplului anterior când s-ar fi extins *pe verticală* (un fișier foarte lung)
 
-# 7. Middlewares
+## 7. Middlewares
 - În contextul unui server web, un middleware reprezintă o metodă intermediară ce este executată înainte ca un request să fie procesat
 
 - În cadrul unui middleware putem implementa funcționalități specifice serverelor web, dar cu caracter general, ce pot fi integrate în mai multe endpoint-uri:
@@ -562,14 +591,14 @@
     });
     ```
 
-- Pentru a aplica global, pentru fiecare request, acest middleware, îl vom importa și utiliza în main.js
+- Pentru a aplica global acest middleware, pentru fiecare request, îl vom importa și utiliza în main.js
     ```javascript
     import { logRequestDetails } from './middlewares/logging.js';
     ....
     app.use(logRequestDetails);
     ```
 
-- Dacă dorim utilizarea lui doar în cadrul unui grup specific de endpoint-uri, cum ar fi movies, îl putem importa și utiliza la nivelul fișierului *routes/movies.js*
+- Dacă dorim utilizarea lui doar în cadrul unui grup specific de endpoint-uri, cum ar fi movies, îl putem importa și utiliza la nivelul fișierului *routes/movie.js*
     ```javascript
     import { logRequestDetails } from '../middlewares/logging.js';
     ...
@@ -577,4 +606,4 @@
     ```
 
 - Un scenariu foarte important în care un middleware este, în general, folosit este cel al autentificării
-    - [Recomandare](https://www.youtube.com/watch?v=xEh6Cb1PSAg)
+    - [exemplu](https://www.youtube.com/watch?v=xEh6Cb1PSAg)
