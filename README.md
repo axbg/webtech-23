@@ -4,7 +4,7 @@
 - alexandru.bisag@csie.ase.ro
 
 ## Ultimul seminar
-- [Seminar 5 - Programare asincronă: callback, Promise, async/await](./s5/README.md)
+- [Seminar 6 - Serverul HTTP: Node.js și Express.js](./s6/README.md)
 
 ## Tema curentă
 - [Tema 1 - JavaScript](./t1/README.md)
@@ -15,6 +15,7 @@
 - [Seminar 3 - Array-uri ](./s3/README.md)
 - [Seminar 4 - Closures, clase și erori](./s4/README.md)
 - [Seminar 5 - Programare asincronă: callback, Promise, async/await](./s5/README.md)
+- [Seminar 6 - Serverul HTTP: Node.js și Express.js](./s6/README.md)
 
 ## Toate temele
 - [Tema 1 - JavaScript](./t1/README.md)
