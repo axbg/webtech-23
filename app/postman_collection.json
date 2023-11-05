@@ -1,0 +1,206 @@
+{
+	"info": {
+		"_postman_id": "77138d4e-18cb-4e5b-a016-f39d26bf81f6",
+		"name": "action!",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3503324"
+	},
+	"item": [
+		{
+			"name": "movies",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_path}}/{{movies_path}}/",
+							"host": [
+								"{{base_path}}"
+							],
+							"path": [
+								"{{movies_path}}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "random",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_path}}/{{movies_path}}/random",
+							"host": [
+								"{{base_path}}"
+							],
+							"path": [
+								"{{movies_path}}",
+								"random"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_path}}/{{movies_path}}/search?title=thinking",
+							"host": [
+								"{{base_path}}"
+							],
+							"path": [
+								"{{movies_path}}",
+								"search"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "thinking"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_path}}/{{movies_path}}/1",
+							"host": [
+								"{{base_path}}"
+							],
+							"path": [
+								"{{movies_path}}",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Drive\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_path}}/{{movies_path}}/",
+							"host": [
+								"{{base_path}}"
+							],
+							"path": [
+								"{{movies_path}}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"oldTitle\": \"Aloners\",\n    \"newTitle\": \"Aloners 2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_path}}/{{movies_path}}/",
+							"host": [
+								"{{base_path}}"
+							],
+							"path": [
+								"{{movies_path}}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_path}}/{{movies_path}}/1",
+							"host": [
+								"{{base_path}}"
+							],
+							"path": [
+								"{{movies_path}}",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_path",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "movies_path",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
