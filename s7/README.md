@@ -110,7 +110,7 @@
     ```
 
 - Pentru testarea conexiunii la o bază de date SQLite și executarea query-urilor de test vom instala extensia [SQLite](https://marketplace.visualstudio.com/items?itemName=alexcvzz.vscode-sqlite) disponibil pentru Visual Studio Code
-    - [tutorial de utilizare](https://www.youtube.com/watch?v=JrAiefGNUq8&t=429s)
+    - [tutorial de utilizare](https://www.youtube.com/watch?v=JrAiefGNUq8)
 
 - În general, când discutăm despre interacțiunea dintre o aplicație și o bază de date relațională, sunt două direcții principale ce pot fi urmate:
     1. compunerea și executarea directă a query-urilor SQL
