@@ -7,7 +7,7 @@
 - [Seminar 7 - REST, baze de date, ORMs](./s7/README.md)
 
 ## Tema curentă
-- [Tema 1 - JavaScript](./t1/README.md)
+- [Tema 2 - JavaScript](./t2/README.md)
 
 ## Toate seminarele
 - [Seminar 1 - Introducere: Git & JavaScript](./s1/README.md)
@@ -20,6 +20,7 @@
 
 ## Toate temele
 - [Tema 1 - JavaScript](./t1/README.md)
+- [Tema 2 - JavaScript](./t2/README.md)
 
 ## Alte materiale
 - [Cursuri video](https://www.youtube.com/watch?v=RLz2q9SKObw&list=PLYdpEVB86eG7P8z3bUn_lC7UZ-Jr4hUIR)
