@@ -74,7 +74,15 @@
 - În esență, API-ul definește regulile și interfața generală pentru comunicarea cu un sistem informatic, în timp ce endpoint-urile reprezintă locațiile specifice în cadrul API-ului unde pot fi accesate resurse sau efectuate diferite operații
 
 - **Exercițiu**: pornind de la [versiunea curentă a aplicației](../app/), încearcă să refactorizezi totul astfel încât să respecte principiile REST enumerate anterior
-    - nu te teme să ștergi rute și funcționalități dacă acestea nu sunt necesare - atunci când folosim un sistem de versionare cum este git codul șters nu este niciodată pierdut, în cazul în care vom avea nevoie de el mai târziu
+    - nu te teme să ștergi endpoint-uri și funcționalități dacă acestea nu sunt necesare - atunci când folosim un sistem de versionare cum este git codul șters nu este niciodată pierdut, în cazul în care vom avea nevoie de el mai târziu
+
+    - pașii pe care îi poți urma pentru a implementa această cerință sunt:
+        - modifică valoarea tuturor path-urilor, incluzând forma plurală a substantivului folosit (în cazul de față /movie/ va deveni /movies/)
+        - redenumește toate fișierele movie.js în movies.js pentru a sincroniza structura proiectului cu interfața 
+        - șterge endpoint-ul random, ce implementează o acțiune și nu respectă principiile REST
+            - deoarece nu va mai fi folosit, poți dezinstala și pachetul "random" instalat în cadrul seminarului anterior (trebuie să folosești o comandă npm pentru a realiza corect dezinstalarea)
+        - șterge endpoint-ul search, ce reprezintă la rândul său o acțiune, și mută logica aferentă în endpoint-ul de listare, ce va suporta acum *filtrarea* rezultatelor pe baza cuvintelor din titlu
+        - implementează conceptul de versionare a API-ului astfel încât un request gestionat înainte pe ruta */movies/* să fie, acum, gestionat pe ruta */api/v1/movies/*
 
 
 ## 2. Persistența datelor
