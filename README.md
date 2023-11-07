@@ -28,5 +28,6 @@
 - [Slack](https://slack.com/downloads/windows)
 - [Git](https://git-scm.com/downloads)
 - [Visual Studio Code](https://code.visualstudio.com/download)
+    - [SQLite Viewer](https://marketplace.visualstudio.com/items?itemName=alexcvzz.vscode-sqlite)
 - [Node.js](https://nodejs.org/en/download)
 - [Postman](https://www.postman.com/downloads/) / [Insomnia](https://insomnia.rest/download)

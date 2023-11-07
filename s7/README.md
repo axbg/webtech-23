@@ -263,7 +263,7 @@
 
 - Ultimul pas pe care trebuie să îl implementăm este actualizarea serviciului pentru gestionarea filmelor pentru a utiliza entitatea Movie în locul array-ului movies (pe care, la finalul refactorizării, îl vom putea șterge)
 
-- Actualizăm, pe rând, fiecare metodă din serviciu, observând modul în care putem insera, actualiza, extrage și sterge date folosind Sequelize
+- Actualizăm, pe rând, fiecare metodă din serviciu, observând modul în care putem insera, actualiza, extrage și șterge date folosind entitatea Movie
     ```javascript
     import { Op } from "sequelize";
     import { Movie } from "../models/movies.js";
