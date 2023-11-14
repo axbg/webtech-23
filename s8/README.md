@@ -248,6 +248,12 @@
 ## 5. Lucru individual 2
 - Încearcă să implementezi relația de tipul Many-to-Many dintre entitățile Movie și Collection și apoi să modifici serviciile celor două entități pentru a returna, atunci când este nevoie, pe lângă entitatea principală, și entitatea asociată, similar cu modelul discutat în cadrul seminarului
 
+- Structura entității Person:
+     - id: integer, cheie primară, autoincrementare
+    - firstname: string, nenul
+    - lastname: string
+    - email: string, nenul, isEmail
+
 - În plus, pentru ca aplicația să aibă toate funcționalitățile menționate, va trebui să implementezi entitatea Person, împreună cu toate structurile aferente, și să definești o relație de tipul One-To-Many între o entitate Person și o entitate Collection (o persoană poate deține mai multe colecții, o colecție poate fi deținută de către o singură persoană)
 
 
