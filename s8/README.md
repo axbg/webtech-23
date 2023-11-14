@@ -13,6 +13,7 @@
     1. [One-to-One](#31-one-to-one)
     2. [One-to-Many / Many-to-One](#32-one-to-many--many-to-one)
     3. [Many-to-Many](#33-many-to-many)
+    4. [Accesarea entităților asociate](#34-accesarea-entităților-asociate)
 
 4. [Relația dintre entitățile Movie și Collection](#4-relația-dintre-entitățile-movie-și-collection)
     1. [Structura bazei de date](#41-structura-bazei-de-date)
@@ -185,6 +186,38 @@
         User.belongsToMany(BankAccount, { through: UserBankAccounts});
         BankAccount.belongsToMany(User, { through: UserBankAccounts});
         ```
+
+### 3.4 Accesarea entităților asociate
+- Pentru a optimiza comunicarea cu baza de date, metodele generate sunt utile atunci când vrem să implementăm un scenariu de încarcare *lazy*, deoarece acestea vor extrage datele doar atunci când acest lucru este cerut în mod explicit
+
+- Dacă, în schimb, vrem să implementăm un scenariu de încarcare *eager* și să extragem entitățile asociate de la nivelul bazei de date în același timp cu entitatea principală, putem utiliza keyword-ul *include*
+    ```javascript
+    User.findAll({
+        include: {
+            model: BankAccount
+            // optional, putem specifica doar o serie de atribute care sa fie extrase
+            attributes: ['id', 'iban', 'amount']
+        }
+    })
+    ```
+
+- Observăm că, în cadrul obiectului asociat returnat este inclusă și tabela de legătură ce confirmă modul în care asocierea a fost realizată
+
+- În practică, însă, această informație este, adesea, nenecesară, motiv pentru care putem configura query-ul să nu returneze această informație
+    ```javascript
+    User.findAll({
+        include: {
+            model: BankAccount
+            // optional, putem specifica doar o serie de atribute care sa fie extrase
+            attributes: ['id', 'iban', 'amount'],
+            // excludere tabelei de legatura din rezultat
+            through: {
+                attributes: []
+            }
+        }
+    })
+    ```
+
 
 ## 4. Relația dintre entitățile Movie și Collection
 ### 4.1 Structura bazei de date
