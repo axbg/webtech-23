@@ -19,7 +19,9 @@
     1. [Structura bazei de date](#41-structura-bazei-de-date)
     2. [Implementarea relației](#42-implementarea-relației)
 
-5. [Resurse utile](#5-resurse-utile)
+5. [Lucru individual 2](#5-lucru-individual-2)
+
+6. [Resurse utile](#6-resurse-utile)
 
 
 ## 1. Recapitulare back-end
@@ -243,7 +245,13 @@
 - Similar se poate defini orice tip de relație din lista celor menționate anterior
 
 
-## 5. Resurse utile
+## 5. Lucru individual 2
+- Încearcă să implementezi relația de tipul Many-to-Many dintre entitățile Movie și Collection și apoi să modifici serviciile celor două entități pentru a returna, atunci când este nevoie, pe lângă entitatea principală, și entitatea asociată, similar cu modelul discutat în cadrul seminarului
+
+- În plus, pentru ca aplicația să aibă toate funcționalitățile menționate, va trebui să implementezi entitatea Person, împreună cu toate structurile aferente, și să definești o relație de tipul One-To-Many între o entitate Person și o entitate Collection (o persoană poate deține mai multe colecții, o colecție poate fi deținută de către o singură persoană)
+
+
+## 6. Resurse utile
 - [dbdiagram](https://dbdiagram.io/home)
 - [nodemon](https://www.digitalocean.com/community/tutorials/workflow-nodemon)
 - [Implementarea funcționalității de login în Node.js](https://www.loginradius.com/blog/engineering/guest-post/nodejs-authentication-guide/)
