@@ -1,5 +1,5 @@
 import { Op } from "sequelize";
-import { Movie } from "../models/config.js";
+import { Collection, Movie } from "../models/config.js";
 
 export const getMovies = async (query) => {
     delete query.id;
@@ -20,15 +20,30 @@ export const getMovies = async (query) => {
 };
 
 export const getById = async (id) => {
-    return await Movie.findOne({
+    const movie = await Movie.findOne({
         where: {
             id: id
+        },
+        include: {
+            model: Collection,
+            // remove the joint table from the result
+            through: {
+                attributes: []
+            }
         }
     });
+
+    return movie;
 };
 
 export const create = async (movie) => {
-    return await Movie.create(movie);
+    const mov = await Movie.create(movie);
+
+    if (!!movie.collectionId) {
+        await mov.addCollection(movie.collectionId);
+    }
+
+    return mov;
 };
 
 export const update = async (movieUpdateData) => {
@@ -40,9 +55,14 @@ export const update = async (movieUpdateData) => {
 
     if (!!movie) {
         delete movieUpdateData.id;
+
         movie.set({
             ...movieUpdateData
         });
+
+        if (!!movieUpdateData.collectionId) {
+            await movie.addCollection(movieUpdateData.collectionId);
+        }
 
         await movie.save();
     }

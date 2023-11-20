@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "77138d4e-18cb-4e5b-a016-f39d26bf81f6",
+		"_postman_id": "8d120e19-f779-4696-8cf1-487a1c5aaafa",
 		"name": "action!",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "3503324"
@@ -15,54 +15,19 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_path}}/{{movies_path}}/",
+							"raw": "{{base_path}}/{{version}}/{{movies_path}}",
 							"host": [
 								"{{base_path}}"
 							],
 							"path": [
-								"{{movies_path}}",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "random",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_path}}/{{movies_path}}/random",
-							"host": [
-								"{{base_path}}"
-							],
-							"path": [
-								"{{movies_path}}",
-								"random"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "search",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_path}}/{{movies_path}}/search?title=thinking",
-							"host": [
-								"{{base_path}}"
-							],
-							"path": [
-								"{{movies_path}}",
-								"search"
+								"{{version}}",
+								"{{movies_path}}"
 							],
 							"query": [
 								{
 									"key": "title",
-									"value": "thinking"
+									"value": "dri",
+									"disabled": true
 								}
 							]
 						}
@@ -75,11 +40,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_path}}/{{movies_path}}/1",
+							"raw": "{{base_path}}/{{version}}/{{movies_path}}/1",
 							"host": [
 								"{{base_path}}"
 							],
 							"path": [
+								"{{version}}",
 								"{{movies_path}}",
 								"1"
 							]
@@ -94,7 +60,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\": \"Drive\"\n}",
+							"raw": "{\n    \"title\": \"Driverrr\",\n    \"year\": 2012,\n    \"director\": \"Nicolas Winding Refn\",\n    \"genre\": \"Action\",\n    \"synopsis\": \"A mysterious Hollywood action film stuntman gets in trouble with gangsters when he tries to help his neighbor's husband rob a pawn shop while serving as his getaway driver.\",\n    \"duration\": 100,\n    \"poster\": \"https://m.media-amazon.com/images/M/MV5BZjY5ZjQyMjMtMmEwOC00Nzc2LTllYTItMmU2MzJjNTg1NjY0XkEyXkFqcGdeQXVyNjQ1MTMzMDQ@._V1_FMjpg_UY5000_.jpg\",\n    \"collectionId\": 2\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -102,11 +68,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{base_path}}/{{movies_path}}/",
+							"raw": "{{base_path}}/{{version}}/{{movies_path}}/",
 							"host": [
 								"{{base_path}}"
 							],
 							"path": [
+								"{{version}}",
 								"{{movies_path}}",
 								""
 							]
@@ -117,11 +84,11 @@
 				{
 					"name": "update",
 					"request": {
-						"method": "PUT",
+						"method": "PATCH",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"oldTitle\": \"Aloners\",\n    \"newTitle\": \"Aloners 2\"\n}",
+							"raw": "{\n    \"id\": 1,\n    \"collectionId\": \"2\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -129,11 +96,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{base_path}}/{{movies_path}}/",
+							"raw": "{{base_path}}/{{version}}/{{movies_path}}/",
 							"host": [
 								"{{base_path}}"
 							],
 							"path": [
+								"{{version}}",
 								"{{movies_path}}",
 								""
 							]
@@ -156,13 +124,268 @@
 							}
 						},
 						"url": {
-							"raw": "{{base_path}}/{{movies_path}}/1",
+							"raw": "{{base_path}}/{{version}}/{{movies_path}}/6",
 							"host": [
 								"{{base_path}}"
 							],
 							"path": [
+								"{{version}}",
 								"{{movies_path}}",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "collections",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_path}}/{{version}}/{{collections_path}}/",
+							"host": [
+								"{{base_path}}"
+							],
+							"path": [
+								"{{version}}",
+								"{{collections_path}}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_path}}/{{version}}/{{collections_path}}/2",
+							"host": [
+								"{{base_path}}"
+							],
+							"path": [
+								"{{version}}",
+								"{{collections_path}}",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Superhero Movies!\",\n    \"personId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_path}}/{{version}}/{{collections_path}}/",
+							"host": [
+								"{{base_path}}"
+							],
+							"path": [
+								"{{version}}",
+								"{{collections_path}}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 2,\n    \"name\": \"Superheroes\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_path}}/{{version}}/{{collections_path}}/",
+							"host": [
+								"{{base_path}}"
+							],
+							"path": [
+								"{{version}}",
+								"{{collections_path}}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_path}}/{{version}}/{{collections_path}}/1",
+							"host": [
+								"{{base_path}}"
+							],
+							"path": [
+								"{{version}}",
+								"{{collections_path}}",
 								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "persons",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_path}}/{{version}}/{{persons_path}}/",
+							"host": [
+								"{{base_path}}"
+							],
+							"path": [
+								"{{version}}",
+								"{{persons_path}}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_path}}/{{version}}/{{persons_path}}/1",
+							"host": [
+								"{{base_path}}"
+							],
+							"path": [
+								"{{version}}",
+								"{{persons_path}}",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstname\": \"Michaeld\",\n    \"lastname\": \"Jordan\",\n    \"email\": \"michael.jordan2@nba.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_path}}/{{version}}/{{persons_path}}/",
+							"host": [
+								"{{base_path}}"
+							],
+							"path": [
+								"{{version}}",
+								"{{persons_path}}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"lastname\": \"Jordann\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_path}}/{{version}}/{{persons_path}}/",
+							"host": [
+								"{{base_path}}"
+							],
+							"path": [
+								"{{version}}",
+								"{{persons_path}}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_path}}/{{version}}/{{persons_path}}/2",
+							"host": [
+								"{{base_path}}"
+							],
+							"path": [
+								"{{version}}",
+								"{{persons_path}}",
+								"2"
 							]
 						}
 					},
@@ -194,13 +417,26 @@
 	"variable": [
 		{
 			"key": "base_path",
-			"value": "",
+			"value": "http://localhost:8080/api",
 			"type": "string"
 		},
 		{
 			"key": "movies_path",
-			"value": "",
+			"value": "movies",
 			"type": "string"
+		},
+		{
+			"key": "version",
+			"value": "v1",
+			"type": "string"
+		},
+		{
+			"key": "collections_path",
+			"value": "collections"
+		},
+		{
+			"key": "persons_path",
+			"value": "persons"
 		}
 	]
 }
