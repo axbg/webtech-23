@@ -4,7 +4,7 @@
 - alexandru.bisag@csie.ase.ro
 
 ## Ultimul seminar
-- [Seminar 8 - Recapitulare back-end și relațiile între entități](./s8/README.md)
+- [Seminar 9 - Clientul HTTP: HTML, CSS și JavaScript - Structură și request-uri](./s9/README.md)
 
 ## Tema curentă
 - [Tema 2 - JavaScript](./t2/README.md)
@@ -18,6 +18,7 @@
 - [Seminar 6 - Serverul HTTP: Node.js și Express](./s6/README.md)
 - [Seminar 7 - REST, baze de date, ORMs](./s7/README.md)
 - [Seminar 8 - Recapitulare back-end și relațiile între entități](./s8/README.md)
+- [Seminar 9 - Clientul HTTP: HTML, CSS și JavaScript - Structură și request-uri](./s9/README.md)
 
 ## Toate temele
 - [Tema 1 - JavaScript](./t1/README.md)
