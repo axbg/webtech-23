@@ -393,8 +393,69 @@
 - Retestarea request-ului din front-end funcționează după configurarea CORS la nivelul back-end-ului
 
 ### 4.3 Adăugarea unui nou film
-- Pentru a implementa procesul de adăugare a unui film în aplicație, vom utiliza o serie de câmpuri în care vom introduce datele necesare (pe scurt, un formular) și o metodă care să gestioneze crearea request-ului utilizând aceste date
+- Pentru a implementa procesul de adăugare a unui film în aplicație, vom utiliza o serie de câmpuri în care vom introduce datele necesare (pe scurt, un formular) și o metodă care să gestioneze crearea request-ului utilizând aceste date:
+    - index.html
+        ```html
+        <div>
+            <p>Insert the details about the new movie</p>
+            <form id="movieForm">
+                <!-- definirea unor label-uri asociate input-urilor -->
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required><br>
+                
+                <label for="year">Year:</label>
+                <input type="number" id="year" name="year" required><br>
+                
+                <label for="director">Director:</label>
+                <input type="text" id="director" name="director" required><br>
+                
+                <label for="genre">Genre:</label>
+                <input type="text" id="genre" name="genre" required><br>
+                
+                <label for="synopsis">Synopsis:</label>
+                <textarea id="synopsis" name="synopsis" required></textarea><br>
+                
+                <label for="duration">Duration (minutes):</label>
+                <input type="number" id="duration" name="duration" required><br>
+                
+                <label for="poster">Poster URL:</label>
+                <input type="url" id="poster" name="poster" required><br>
+                
+                <!-- la apasarea butonului de submit a formularului este apelata metoda addMovie-->
+                <button type="button" onclick="addMovie()">Submit</button>
+            </form>
+        </div>
+        ```
 
+    - script.js
+        ```javascript
+        function addMovie() {
+            // extragerea datelor din campurile formularului
+            const formData = {
+                title: document.getElementById('title').value,
+                year: parseInt(document.getElementById('year').value),
+                director: document.getElementById('director').value,
+                genre: document.getElementById('genre').value,
+                synopsis: document.getElementById('synopsis').value,
+                duration: parseInt(document.getElementById('duration').value),
+                poster: document.getElementById('poster').value,
+            };
+
+            // apelarea endpoint-ului de creare a unui nou film
+            fetch('http://localhost:8080/api/v1/movies', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            })
+            // dupa adaugarea cu succes a unui nou film, lista de filme de la nivelul front-end-ului este reincarcata
+                .then(response => loadMovies())
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        }
+        ```
 
 ## 5. Lucru individual
 - Plecând de la exemplul anterior, încearcă să integrezi în pagină, după secțiunile implementate la seminar, operațiile de listare a tuturor entităților persoană din baza de date și de adăugare a unei persoane noi utilizând endpoint-urile specifice
