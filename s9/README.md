@@ -225,7 +225,7 @@
     - **style.css** -> conține stilurile aplicate pe elemente
     - **script.js** -> conține interacțiunile cu elementele definite
 
-- Similar, pentru a organiza separat back-end-ul de front-end, vom modifica directorul *app*, mutând tot conținutul curent într-un subdirector nou denumite *be*
+- Similar, pentru a organiza separat back-end-ul de front-end, vom modifica directorul *app*, mutând tot conținutul curent într-un subdirector nou denumit *be*
 
 - Ulterior, vom crea un nou director numit *fe* în care vom defini cele 3 fișiere menționate anterior
 
@@ -360,7 +360,9 @@
         ```
 
 ### 4.2 CORS
-- După implementarea codului și reîncărcarea paginii accesate, vom observa, în consola browserului, o eroare similară
+- După implementarea codului și reîncărcarea paginii accesate, vom observa în consola browserului o eroare similară
+
+    ![CORS Exception](https://i.stack.imgur.com/4r8bx.png)
 
 - Aceasta se datorează mecanismului de Cross-Origin Resource Sharing (CORS) ce nu permite unui browser să apeleze un API decât dacă acel API menționează explicit că adresa de la care browserul face request-ul este o adresă validă
 
