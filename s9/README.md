@@ -401,32 +401,54 @@
         <div>
             <p>Insert the details about the new movie</p>
             <form id="movieForm">
-                <!-- definirea unor label-uri asociate input-urilor -->
                 <label for="title">Title:</label>
-                <input type="text" id="title" name="title" required><br>
-                
+                <input type="text" id="title" name="title" required>
+
                 <label for="year">Year:</label>
-                <input type="number" id="year" name="year" required><br>
-                
+                <input type="number" id="year" name="year" required>
+
                 <label for="director">Director:</label>
-                <input type="text" id="director" name="director" required><br>
-                
+                <input type="text" id="director" name="director" required>
+
                 <label for="genre">Genre:</label>
-                <input type="text" id="genre" name="genre" required><br>
-                
+                <input type="text" id="genre" name="genre" required>
+
                 <label for="synopsis">Synopsis:</label>
-                <textarea id="synopsis" name="synopsis" required></textarea><br>
-                
+                <textarea id="synopsis" name="synopsis" required></textarea>
+
                 <label for="duration">Duration (minutes):</label>
-                <input type="number" id="duration" name="duration" required><br>
-                
+                <input type="number" id="duration" name="duration" required>
+
                 <label for="poster">Poster URL:</label>
-                <input type="url" id="poster" name="poster" required><br>
-                
-                <!-- la apasarea butonului de submit a formularului este apelata metoda addMovie-->
+                <input type="url" id="poster" name="poster" required>
+
                 <button type="button" onclick="addMovie()">Submit</button>
             </form>
         </div>
+        ```
+
+    - style.css
+        ```css
+        textarea {
+            resize: vertical;
+        }
+
+        #movieForm {
+            width: 30%;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        #movieForm input,
+        #movieForm textarea {
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        #movieForm button {
+            width: 100%;
+        }
         ```
 
     - script.js
