@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 import { router } from "./routes/config.js";
 import { logger as loggerMiddleware } from './middlewares/logger.js';
 import { synchronizeDatabase } from "./models/config.js";
@@ -9,6 +10,9 @@ const app = express();
 
 // process incoming JSON bodies in requests
 app.use(express.json());
+// configure CORS for development
+//  avoid doing this for production-ready configurations!
+app.use(cors());
 
 // attach a middleware
 app.use(loggerMiddleware);

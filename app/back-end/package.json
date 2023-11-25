@@ -12,6 +12,7 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.18.2",
     "sequelize": "^6.34.0",
     "sqlite3": "^5.1.6"

@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <title>action!</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <h1>This will be an awesome app!</h1>
+        <div>
+            <p>Insert the details about the new movie</p>
+            <form id="movieForm">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required>
+
+                <label for="year">Year:</label>
+                <input type="number" id="year" name="year" required>
+
+                <label for="director">Director:</label>
+                <input type="text" id="director" name="director" required>
+
+                <label for="genre">Genre:</label>
+                <input type="text" id="genre" name="genre" required>
+
+                <label for="synopsis">Synopsis:</label>
+                <textarea id="synopsis" name="synopsis" required></textarea>
+
+                <label for="duration">Duration (minutes):</label>
+                <input type="number" id="duration" name="duration" required>
+
+                <label for="poster">Poster URL:</label>
+                <input type="url" id="poster" name="poster" required>
+
+                <button type="button" onclick="addMovie()">Submit</button>
+            </form>
+        </div>
+        <h3>The movies available in the app are: </h3>
+        <button onclick="loadMovies()">Load movies</button>
+        <div id="moviesContainer">
+            <p>Nothing loaded yet - click on the button to load the movies</p>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
