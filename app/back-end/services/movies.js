@@ -14,7 +14,7 @@ export const getMovies = async (query) => {
     });
 
     return await Movie.findAll({
-        attributes: ['id', 'title', 'year', 'director', 'genre', 'poster'],
+        attributes: ['id', 'title', 'year', 'director', 'genre', 'poster', 'synopsis', 'duration'],
         where: where
     });
 };

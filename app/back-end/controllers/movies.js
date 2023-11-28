@@ -16,7 +16,7 @@ const getById = async (req, res) => {
 
 const create = async (req, res) => {
     if (!req.body.title || !req.body.director || !req.body.year) {
-        return res.status(404).send({ message: "Missing title, director or year" });
+        return res.status(400).send({ message: "Missing title, director or year" });
     }
 
     const existingMovies = await moviesService.getMovies({ title: req.body.title, director: req.body.director, year: req.body.year });
