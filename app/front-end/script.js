@@ -1,33 +1,87 @@
-function loadMovies() {
-    fetch("http://localhost:8080/api/v1/movies")
+window.onload = () => loadMovies();
+
+document.getElementById("addMovieForm").addEventListener('submit', ($event) => {
+    $event.preventDefault();
+    addMovie()
+});
+
+function loadMovies(title) {
+    const queryParams = new URLSearchParams();
+
+    if(!!title) {
+        queryParams.append("title", title);
+    }
+
+    fetch("http://localhost:8080/api/v1/movies?" + queryParams)
         .then(response => response.json())
         .then(data => data.movies)
         .then(movies => {
             const moviesList = document.getElementById("moviesContainer");
             moviesList.innerHTML = "";
 
-            for (let movie of movies) {
-                const item = document.createElement("div");
-                item.classList.add("movie-container");
-                item.addEventListener("click", () => onMovieClick(movie));
+            movies.forEach(movie => {
+                const movieItem = document.createElement("div");
+                movieItem.classList.add("movie-container");
 
-                const movieName = document.createElement("p");
-                movieName.innerText = movie.title + " (" + movie.year + ")";
+                const movieInfoContainer = document.createElement("div");
+                movieInfoContainer.classList.add("movie-info-container");
+
+                const movieHeader = document.createElement("div");
+                movieHeader.classList.add("movie-header");
+
+                const movieTitle = document.createElement("h4");
+                movieTitle.innerText = `${movie.title} (${movie.year})`;
+
+                const movieDeleteBtn = document.createElement("button");
+                movieDeleteBtn.classList.add("remove-btn");
+                movieDeleteBtn.innerText = "X";
+                movieDeleteBtn.addEventListener("click", () => removeMovie(movie));
+
+                const movieSpecs = document.createElement("div");
+                movieSpecs.classList.add("movie-specs");
+                movieSpecs.innerText = `${movie.genre} • ${movie.duration} minutes • ${movie.director}`;
+
+                movieHeader.appendChild(movieTitle);
+                movieHeader.appendChild(movieDeleteBtn);
+
+                const movieSynopsis = document.createElement("div");
+                movieSynopsis.classList.add("movie-synopsis");
+                movieSynopsis.innerText = movie.synopsis;
+
+                movieInfoContainer.appendChild(movieHeader);
+                movieInfoContainer.appendChild(movieSpecs);
+                movieInfoContainer.appendChild(movieSynopsis);
 
                 const moviePoster = document.createElement("img");
                 moviePoster.setAttribute("src", movie.poster);
                 moviePoster.classList.add("poster-container");
 
-                item.appendChild(movieName);
-                item.appendChild(moviePoster);
+                movieItem.appendChild(moviePoster);
+                movieItem.appendChild(movieInfoContainer);
 
-                moviesList.appendChild(item);
-            }
+                moviesList.appendChild(movieItem);
+            })
+        }
+    )
+}
+
+function removeMovie(movie) {
+    fetch(`http://localhost:8080/api/v1/movies/${movie.id}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    }).then(response => {
+        loadMovies();
+    })
+        .catch((error) => {
+            console.error('Error:', error);
         });
 }
 
-function onMovieClick(movie) {
-    alert("Directed by " + movie.director);
+function searchMovie() {
+    const title = document.getElementById("search").value;
+    loadMovies(title);
 }
 
 function addMovie() {
@@ -49,15 +103,19 @@ function addMovie() {
         body: JSON.stringify(formData),
     })
         .then(response => {
-            if (response.status === 201) {
-                loadMovies();
-                alert("Movie added!");
-            } else if (response.status === 400) {
-                alert("Movie already exists!");
-            }
+            document.getElementById("addMovieForm").reset();
+            loadMovies();
+            closeModal();
         })
         .catch((error) => {
-            console.log("yes");
             console.error('Error:', error);
         });
+}
+
+function openModal() {
+    document.getElementById("addMovieModal").show();
+}
+
+function closeModal() {
+    document.getElementById("addMovieModal").close();
 }
