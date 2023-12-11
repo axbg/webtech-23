@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { addMovie as addMovieAction } from '../../reducers/movies-reducer';
 
 import { MovieCard } from '../../components/MovieCard';
 
@@ -9,10 +11,10 @@ import { Searchbar } from '../../components/Searchbar';
 const SERVER_URL = "http://localhost:8080/api/v1";
 
 const Movies = () => {
-    // declaram o variabila state pentru a stoca filmele - inițial este un array gol
     const [movies, setMovies] = useState([]);
-    // declaram o variabila state pentru a determina daca afisam sau nu modala
     const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const dispatch = useDispatch();
 
     const getMovies = (queryTitle) => {
         const queryParams = new URLSearchParams();
@@ -21,7 +23,6 @@ const Movies = () => {
             queryParams.append("title", queryTitle);
         }
 
-        // apelam metoda expusa de backend pentru a prelua filmele si le setam in state
         fetch(`${SERVER_URL}/movies?` + queryParams)
             .then(res => res.json())
             .then(data => setMovies(data.movies));
@@ -35,7 +36,11 @@ const Movies = () => {
             },
             body: JSON.stringify(movie)
         })
-            .then(res => getMovies())
+            .then(res => {
+                // dupa adaugarea unui film, il adaugam in store
+                dispatch(addMovieAction(movie));
+                getMovies();
+            })
             .catch(err => console.log(err));
     }
 
@@ -46,8 +51,6 @@ const Movies = () => {
     }
 
     useEffect(() => {
-        // in momentul in care pagina este adaugata in DOM
-        // se preiau datele din backend
         getMovies();
     }, []);
 
@@ -65,13 +68,11 @@ const Movies = () => {
                 <h3>All movies</h3>
                 <Searchbar openModal={openModal} getMovies={getMovies} />
                 <div id="moviesContainer">
-                    {/* sintaxa de JSX, pentru fiecare film din lista este afisata o componenta de tip MovieCard */}
                     {movies.map((movie, index) => (
                         <MovieCard movie={movie} key={index} onDelete={deleteMovie} />
                     ))}
                 </div>
             </div>
-            {/* randare conditionala */}
             {isModalOpen && <CreateMovieModal onAddMovie={addMovie} closeModal={closeModal} />}
         </div>
     )
