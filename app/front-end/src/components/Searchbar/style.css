@@ -1,0 +1,11 @@
+.toolbar {
+    margin: 20px 0;
+    display: flex;
+    /* spatierea dintre elementele unui flexbox */
+    gap: 10px;
+}
+
+/* elementele cu clasa searchbar vor ocupa tot spatiul ramas in cadrul unui container flex dupa ce elementele alaturate vor fi afisate */
+.searchbar {
+    flex: 1;
+}

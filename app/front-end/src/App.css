@@ -1,0 +1,16 @@
+.header {
+  background-color: #201335;
+  height: 60px;
+  color: white;
+  /* utilizarea unui container flex ce asigura redimensionarea automata a header-ului */
+  display: flex;
+  align-items: center;
+  /* stilizarea padding-ului din partea stanga a elementului */
+  padding-left: 20px;
+}
+
+.app-title {
+  /* stilizarea dimensiunii si a stilului fontului utilizat */
+  font-weight: bold;
+  font-size: 16px;
+}

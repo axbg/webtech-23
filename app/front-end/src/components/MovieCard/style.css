@@ -1,0 +1,56 @@
+.movie-container {
+    /* stilizarea bordurii unui element */
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px auto;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+}
+
+.movie-info-container {
+    padding: 20px;
+    display: flex;
+    /* ordonarea pe verticala a elementelor dintr-un flexbox */
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.movie-header {
+    display: flex;
+    gap: 10px;
+}
+
+/* utilizarea pseudo-clasei first-child ce va selecta, asa cum ii spun enumele, primul copil al elementului curent */
+.movie-header :first-child {
+    flex: 1;
+}
+
+.movie-specs {
+    font-style: italic;
+}
+
+.movie-synopsis {
+    padding: 20px;
+    border: 1px solid black;
+    background-color: #FFB17A;
+    /* rotunjirea marginilor bordurii unui element */
+    border-radius: 20px;
+}
+
+.poster-container {
+    /* setarea inaltimii maxime pe care un element o poate avea */
+    max-height: 200px;
+}
+
+.edit-movie-form {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.movie-tool-btn {
+    height: 40px;
+}
