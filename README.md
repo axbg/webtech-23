@@ -7,7 +7,7 @@
 - [Seminar 12 - React Router & Redux](./s12/README.md)
 
 ## Tema curentă
-- [Tema 3 - Express](./t3/README.md)
+- [Tema 4 - React](./t4/README.md)
 
 ## Toate seminarele
 - [Seminar 1  - Introducere: Git & JavaScript](./s1/README.md)
@@ -27,6 +27,7 @@
 - [Tema 1 - JavaScript](./t1/README.md)
 - [Tema 2 - JavaScript](./t2/README.md)
 - [Tema 3 - Express](./t3/README.md)
+- [Tema 4 - React](./t4/README.md)
 
 ## Alte materiale
 - [Cursuri video](https://www.youtube.com/watch?v=RLz2q9SKObw&list=PLYdpEVB86eG7P8z3bUn_lC7UZ-Jr4hUIR)
