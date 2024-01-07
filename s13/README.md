@@ -1,4 +1,4 @@
-# React: Utilizarea bibliotecilor de componente
+# React: utilizarea bibliotecilor de componente
 
 ## Conținut
 1. [Material UI](#1-material-ui)
