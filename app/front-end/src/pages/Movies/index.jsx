@@ -46,8 +46,23 @@ const Movies = () => {
             .catch(err => console.log(err));
     }
 
+    const updateMovie = (movie) => {
+        fetch(`${SERVER_URL}/movies`, {
+            method: "PATCH",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(movie)
+        })
+            .then(res => updateLocalMovie(movie))
+            .catch(err => console.log(err));
+    }
+
+    const updateLocalMovie = (updatedMovie) => {
+        setMovies(movies.map(movie => movie.id === updatedMovie.id ? { ...updatedMovie } : { ...movie }));
+    }
+
     const deleteMovie = (movie) => {
-        console.log("yees");
         fetch(`${SERVER_URL}/movies/${movie.id}`, { method: "DELETE" })
             .then(res => getMovies())
             .catch(err => console.log(err));
@@ -74,7 +89,7 @@ const Movies = () => {
             <div className="container">
                 <h3>All movies</h3>
                 <Searchbar openModal={openModal} getMovies={getMovies} switchView={switchView} />
-                {viewMode === "list" && <MovieList movies={movies} deleteMovie={deleteMovie} />}
+                {viewMode === "list" && <MovieList movies={movies} updateMovie={updateMovie} deleteMovie={deleteMovie} />}
                 {viewMode === "table" && <MovieTable movies={movies} deleteMovie={deleteMovie} />}
             </div>
             {isModalOpen && <CreateMovieModal onAddMovie={addMovie} closeModal={closeModal} />}
