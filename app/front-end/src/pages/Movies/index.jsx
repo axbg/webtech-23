@@ -14,7 +14,7 @@ const SERVER_URL = "http://localhost:8080/api/v1";
 const Movies = () => {
     const [movies, setMovies] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [viewMode, setViewMode] = useState("table");
+    const [viewMode, setViewMode] = useState("list");
 
     const dispatch = useDispatch();
 
