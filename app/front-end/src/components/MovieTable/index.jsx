@@ -6,9 +6,29 @@ import "./style.css";
 
 const MovieTable = ({ movies, deleteMovie }) => {
     const columns = [
-        { field: "id", headerName: "ID", flex: 0.1, align: 'center', headerClassName: "table-header", headerAlign: "center" },
-        { field: "title", headerName: "Title", flex: 1, align: 'center', headerClassName: "table-header", headerAlign: "center" },
-        { field: "director", headerName: "Director", flex: 1, align: 'center', headerClassName: "table-header", headerAlign: "center" },
+        { 
+            field: "id", 
+            headerName: "ID", 
+            flex: 0.1, align: 'center', 
+            headerClassName: "table-header", 
+            headerAlign: "center" 
+        },
+        { 
+            field: "title", 
+            headerName: "Title", 
+            flex: 1,
+            align: 'center', 
+            headerClassName: "table-header", 
+            headerAlign: "center" 
+        },
+        { 
+            field: "director", 
+            headerName: "Director", 
+            flex: 1, 
+            align: 'center', 
+            headerClassName: "table-header", 
+            headerAlign: "center" 
+        },
         {
             field: "year",
             headerName: "Year",
@@ -18,7 +38,14 @@ const MovieTable = ({ movies, deleteMovie }) => {
             headerClassName: "table-header",
             headerAlign: "center"
         },
-        { field: "genre", headerName: "Genre", flex: 0.5, align: 'center', headerClassName: "table-header", headerAlign: "center" },
+        { 
+            field: "genre", 
+            headerName: "Genre", 
+            flex: 0.5, 
+            align: 'center', 
+            headerClassName: "table-header", 
+            headerAlign: "center" 
+        },
         {
             field: "duration",
             headerName: "Duration",
@@ -41,7 +68,7 @@ const MovieTable = ({ movies, deleteMovie }) => {
                         icon={<DeleteIcon />}
                         label="Delete"
                         onClick={() => {
-                            if (window.confirm("Do you want to delete?")) {
+                            if (window.confirm("Do you want to delete this movie?")) {
                                 deleteMovie({ id: id });
                             };
                         }}

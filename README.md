@@ -4,7 +4,7 @@
 - alexandru.bisag@csie.ase.ro
 
 ## Ultimul seminar
-- [Seminar 12 - React Router & Redux](./s12/README.md)
+- [Seminar 13 - React: Utilizarea bibliotecilor de componente](./s13/README.md)
 
 ## Tema curentă
 - [Tema 4 - React](./t4/README.md)
@@ -22,11 +22,12 @@
 - [Seminar 10 - CSS: dezvoltarea interfețelor grafice pe web](./s10/README.md)
 - [Seminar 11 - React](./s11/README.md)
 - [Seminar 12 - React Router & Redux](./s12/README.md)
+- [Seminar 13 - React: Utilizarea bibliotecilor de componente](./s13/README.md)
 
 ## Toate temele
 - [Tema 1 - JavaScript](./t1/README.md)
 - [Tema 2 - JavaScript](./t2/README.md)
-- [Tema 3 - Express](./t3/README.md)
+- [Tema 3 - Express](./t3/README.md) 
 - [Tema 4 - React](./t4/README.md)
 
 ## Alte materiale
