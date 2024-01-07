@@ -6,6 +6,10 @@
 ## Ultimul seminar
 - [Seminar 13 - React: Utilizarea bibliotecilor de componente](./s13/README.md)
 
+## Exemple de examen
+- [Varianta 1](./exam-sample/1/)
+- [Varianta 2](./exam-sample/2/)
+
 ## Tema curentă
 - [Tema 4 - React](./t4/README.md)
 
