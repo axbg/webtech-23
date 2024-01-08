@@ -17,7 +17,7 @@
 ## 1. Material UI
 - Adesea, pentru a facilita dezvoltarea aplicațiilor web, programatorii pot folosi o bibliotecă externă pentru componente vizuale
 
-- O astfel de abordare asigură cooerență în ceea ce privește aspectul vizual al aplicației, întrucât componentele importate din bibliotecă sunt, de cele mai multe ori, deja stilizate
+- O astfel de abordare asigură coerență în ceea ce privește aspectul vizual al aplicației, întrucât componentele importate din bibliotecă sunt, de cele mai multe ori, deja stilizate
 
 - Una dintre alegerile populare pentru React (și nu numai) este **Material UI**
 
