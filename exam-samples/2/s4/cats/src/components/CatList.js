@@ -1,4 +1,4 @@
-import {useReducer, useEffect, useState } from 'react'
+import {useEffect, useState } from 'react'
 import store from '../stores/CatStore'
 import Cat from './Cat'
 import CatForm from './CatForm'

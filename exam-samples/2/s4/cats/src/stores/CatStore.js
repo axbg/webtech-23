@@ -32,10 +32,7 @@ class CatStore {
 		return this.cats
 	}
 	deleteCat(id){
-		let index = this.cats.findIndex((e) => e.id === id)
-		if (index !== -1){
-			this.cats.splice(index, 1)
-		}
+		this.cats = this.cats.filter(e => e.id !== id);
 		this.emitter.emit('UPDATE')
 	}
 }
