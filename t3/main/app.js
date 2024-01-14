@@ -22,6 +22,7 @@ let FoodItem = sequelize.define('foodItem', {
 
 
 const app = express()
+app.use(express.json());
 // TODO
 
 app.get('/create', async (req, res) => {
