@@ -7,12 +7,6 @@
 - [Varianta 1](./exam-samples/1/)
 - [Varianta 2](./exam-samples/2/)
 
-## Ultimul seminar
-- [Seminar 13 - React: utilizarea bibliotecilor de componente](./s13/README.md)
-
-## Tema curentă
-- [Tema 4 - React](./t4/README.md)
-
 ## Toate seminarele
 - [Seminar 1  - Introducere: Git & JavaScript](./s1/README.md)
 - [Seminar 2  - Web & JavaScript 101](./s2/README.md)
