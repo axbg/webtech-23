@@ -1,7 +1,7 @@
 const getDinosaurs = (callback) => {
   setTimeout(() => {
     const dinosaurs = ["Apatosaurus", "Tyrannosaurus", "Giganotosaurus", "Allosaurus"];
-    callback(dinosaurs, getDinosaursAge);
+    callback(dinosaurs);
   }, 2000);
 };
 
@@ -11,7 +11,7 @@ const getDinosaursAge = (dinosaurs, callback) => {
       name: dinosaur,
       age: Math.trunc(Math.random() * 20) + 1,
     }));
-    callback(dinosaursWithAge, getDinosaursColor);
+    callback(dinosaursWithAge);
   }, 2000);
 };
 
@@ -34,11 +34,8 @@ const displayDinosaurs = (dinosaursWithColor) => {
 
 getDinosaurs((dinosaurs) => {
   getDinosaursAge(dinosaurs, (dinosaursWithAge) => {
-    getDinosaursColor(
-      dinosaursWithAge,
-      (dinosaursWithColor) => {
-        displayDinosaurs(dinosaursWithColor);
-      }
-    );
-  });
-});
+    getDinosaursColor(dinosaursWithAge, (dinosaursWithColor) => {
+      displayDinosaurs(dinosaursWithColor);
+    })
+  })
+})
