@@ -75,7 +75,7 @@
 ### 1.2 Programarea asincronă
 - Programarea asincronă este un stil de avansat de programare ce permite unui runtime să execute mai multe instrucțiuni la un moment dat, fără să aștepte, în prealabil, finalizarea unor instrucțiuni anterioare
 
-    ![Programarea asincronă](https://www.freecodecamp.org/news/content/images/2023/01/image-336.png)
+    ![Programarea asincronă](./assets/async-execution.png)
 
 - În JavaScript, majoritatea operațiunilor asincrone au la bază evenimente de intrare/ieșire, atât pe back-end, cât și pe front-end
     - apelarea unui serviciu extern
