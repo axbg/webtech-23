@@ -14,7 +14,7 @@
 
 - exemplu:
     - la apelul metodei cu parametrii render({ a: 'some ${value1}'}, { value1: 'thing'}), metoda trebuie să returneze valoarea *<a>some thing</a>*
-    - la apelul metodei cu parametrii de mai jos, trebuie să returneze valoarea: *<a><b><c>content</c></b><d>first</d></a><c><e>second</e></c>*
+    - la apelul metodei cu parametrii de mai jos, trebuie să returneze valoarea: `<a><b><c>content</c></b><d>first</d></a><c><e>second</e></c>`
         ```javascript
         render(
             {
