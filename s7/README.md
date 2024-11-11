@@ -8,9 +8,9 @@
     4. [API vs Endpoint](#14-api-vs-endpoint)
 
 2. [Persistența datelor](#2-persistența-datelor)
-    1. [REST](#1-rest)
-    2. [REST](#1-rest)
-    3. [REST](#1-rest)
+    1. [Bazele de date relaționale](#21-bazele-de-date-relaționale)
+    2. [SQLite](#22-sqlite)
+    3. [Sequelize](#23-sequelize)
 
 3. [Lucru individual](#3-lucru-individual)
 
@@ -44,7 +44,6 @@
     - Utilizarea JSON ca format de transferare a datelor
     - Utilizarea substantivelor la plural în locul verbelor în cadrul URL-urilor
     - Utilizarea corectă și uniformă a codurilor de stare (status codes)
-    - Exprimarea relațiilor dintre resurse prin definirea de URL-uri nested (care permit accesarea unor resurse asociate plecând de la resursa principală)
     - Utilizarea filtrării, a sortării și a paginării pentru a eficientiza accesul la resurse
     - Implementarea unui sistem de versionare a URL-urilor
 
