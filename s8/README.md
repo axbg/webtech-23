@@ -2,10 +2,6 @@
 
 ## Conținut
 1. [Recapitulare back-end](#1-recapitulare-back-end)
-    1. [Ce este REST?](#11-ce-este-rest)
-    2. [Caracteristicile REST](#12-caracteristicile-rest)
-    3. [REST și CRUD](#13-rest-și-crud)
-    4. [API vs Endpoint](#14-api-vs-endpoint)
 
 2. [Lucru individual](#2-lucru-individual)
 
